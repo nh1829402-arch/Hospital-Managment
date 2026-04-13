@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors - Hospital Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Hospital Management System</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/patients">Patients</a>
+            <a href="/doctors">Doctors</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Doctors</h2>
+        <a href="/add_doctor">Add New Doctor</a>
+        <ul>
+            {% for doctor in doctors %}
+            <li>{{ doctor.name }} - Specialty: {{ doctor.specialty }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
